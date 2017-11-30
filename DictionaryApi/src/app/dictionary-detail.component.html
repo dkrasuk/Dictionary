@@ -1,0 +1,80 @@
+<button type="button" class="btn btn-success goBack" (click)="goBack()">Back</button>
+<div *ngIf="dictionary" class="details">
+    <div class="panel-group">
+        <div class="panel-success dictionary-block">
+            <div class="panel-heading"><h5 href="#dictDescription" data-toggle="collapse"><b>Dictionary settings</b></h5></div>
+            <div class="panel-body collapse in" id="dictDescription">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dictionaryName">Dictionary name:</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)]="dictionary.Name" [ngModelOptions]="{standalone: true}" class="form-control" id="dictionaryName" placeholder="Dictionary name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dictionaryMetadata">Dictionary metadata:</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)]="dictionary.Metadata" [ngModelOptions]="{standalone: true}" class="form-control" id="dictionaryMetadata" placeholder="Dictionary metadata">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dictionaryVersion">Dictionary version:</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)]="dictionary.Version" [ngModelOptions]="{standalone: true}" class="form-control" id="dictionaryVersion" placeholder="Dictionary version">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success btn-sm" (click)="save()">Save</button>
+                        <button type="button" class="btn btn-success btn-sm" (click)="fillNewItemPattern()" data-toggle="modal" data-target="#createModal">Create item</button>
+                        <div id="createModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Create Item</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label (click)="fillNewItemPattern()">Item:</label>
+                                                <textarea class="form-control" rows="7" [(ngModel)]="newItemValue" [ngModelOptions]="{standalone: true}"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="createItem(dictionary)">Create new item</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-success dictionary-block">
+            <div class="panel-heading"><h5 href="#dictItems" data-toggle="collapse"><b>Dictionary items</b></h5></div>
+            <div class="panel-body collapse in" id="dictItems">
+                <div class="panel-success" *ngIf="dictionary.Items.length > 0">
+                    <form class="form-inline" *ngFor="let item of dictionary.Items; let i = index;">
+                        <div class="panel panel-success">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="item">{{item.ValueId}}:</label>
+                                    <textarea class="form-control" rows="5" id="item" placeholder="Item value" [(ngModel)]="dictionary.Items[i].ValueString"  [ngModelOptions]="{standalone: true}">{{item.ValueString}}</textarea>
+                                    <button type="button" class="btn btn-danger" (click)="deleteItem(item.ValueId); $event.stopPropagation()">&times;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="dictionaryIsEmpty()">
+    <div class="loading"></div>
+</div>

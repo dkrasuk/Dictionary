@@ -1,0 +1,86 @@
+.dictionaries {
+    margin-left: 15%;
+}
+.dictionaries panel-heading:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+.dictMetadata {
+    margin: -25px 10px 10px;
+}
+ul {
+    list-style-type: none;
+}
+span.dictName {
+    font-family: sans-serif;
+    position: relative;
+    top: -4px;
+}
+.selected .panel {
+    margin-top: -1.76em;
+}
+.dictionaries .panel {
+    margin-top: -1.76em;
+}
+.dictionaries li {
+    padding: .3em 0;
+    height: 2em;
+    background-color: rgba(238, 238, 238, 0.46);
+    margin: .5em;
+}
+.dictionaries li.selected {
+    padding-right: 10px;
+    margin-right: 8px;
+    border-radius: 4px 4px 10px 10px;
+    color: #888;
+    height: auto;
+    padding-left: 14px;
+}
+.dictionaries .panel-heading {
+    height: 2.15em;
+}
+.dictionaries .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -16px;
+    top: -11px;
+    height: 2.4em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+}
+button.delete {
+    position: relative;
+    top: -0.7em;
+    right: 0.6em;
+    background-color: gray !important;
+    color:white;
+}
+.selected .badge {
+    margin-left: -13px;
+}
+.selected .delete {
+    padding-left: 10px;
+    margin-left: 3px;
+    position: relative;
+    top: -0.7em;
+    right: 0.2em;
+}
+.loading {
+    position: relative;
+    top: 200px;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    background: url(../Content/images/ajax-loader.gif) 50% 50% no-repeat;
+}
+.createDictionary {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    margin-left: 11%;
+}

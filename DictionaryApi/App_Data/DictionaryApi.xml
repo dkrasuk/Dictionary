@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DictionaryApi</name>
+    </assembly>
+    <members>
+        <member name="T:DictionaryApi.AppSettings">
+            <summary>
+            Class AppSettings.
+            </summary>
+        </member>
+        <member name="P:DictionaryApi.AppSettings.HRWebAPIAddress">
+            <summary>
+            Gets the hr web API address.
+            </summary>
+            <value>The hr web API address.</value>
+        </member>
+        <member name="P:DictionaryApi.AppSettings.HRWebAPILogin">
+            <summary>
+            Gets the hr web API login.
+            </summary>
+            <value>The hr web API login.</value>
+        </member>
+        <member name="P:DictionaryApi.AppSettings.HRWebAPIPassword">
+            <summary>
+            Gets the hr web API password.
+            </summary>
+            <value>The hr web API password.</value>
+        </member>
+        <member name="T:DictionaryApi.App_Start.FilterConfig">
+            <summary>
+            Class FilterConfig.
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.App_Start.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            Registers the global filters.
+            </summary>
+            <param name="filters">The filters.</param>
+        </member>
+        <member name="T:DictionaryApi.RouteConfig">
+            <summary>
+            Class RouteConfig.
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Registers the routes.
+            </summary>
+            <param name="routes">The routes.</param>
+        </member>
+        <member name="T:DictionaryApi.SwaggerConfig">
+            <summary>
+            SwaggerConfig
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.SwaggerConfig.Register">
+            <summary>
+            Register
+            </summary>
+        </member>
+        <member name="T:DictionaryApi.WebApiConfig">
+            <summary>
+            WebApiConfig
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Register
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:DictionaryApi.Configuration.AutofacConfig">
+            <summary>
+            Configurate Autofac
+            </summary>
+        </member>
+        <member name="T:DictionaryApi.Controllers.DictionaryController">
+            <summary>
+            Dictionary Controller
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.#ctor(DictionariesBL.IBLService,AlfaBank.Logger.ILogger)">
+            <summary>
+            Dictionary Controller
+            </summary>
+            <param name="service"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.GetDictionaryByName(System.String)">
+            <summary>
+            Get Dictionaries by dictionaryName
+            </summary>
+            <param name="dictionaryName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.GetDictionaryByNameAndVersion(System.String,System.String)">
+            <summary>
+            Get Dictionary
+            </summary>
+            <param name="dictionaryName"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.GetDictionaryItemById(System.String,System.String,System.String)">
+            <summary>
+            Get Item
+            </summary>
+            <param name="dictionaryName"></param>
+            <param name="version"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.CreateDictionary(DictionariesModel.DictionaryDTO)">
+            <summary>
+            Create Dictionary
+            </summary>
+            <param name="dictionaryDto"></param>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.PostItem(System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add Item
+            </summary>
+            <param name="dictionaryName"></param>
+            <param name="version"></param>
+            <param name="value"></param>        
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.ChangeItem(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            change item
+            </summary>
+            <param name="dictionaryName"></param>
+            <param name="version"></param>
+            <param name="id"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.PutDictionary(System.String,System.String,DictionariesModel.DictionaryDTO)">
+            <summary>
+            Puts the dictionary. Change or create new dictionary.
+            </summary>
+            <param name="dictionaryName">Name of the dictionary.</param>
+            <param name="version">The version.</param>
+            <param name="dictionary">The dictionary.</param>
+            <returns>Task&lt;HttpResponseMessage&gt;.</returns>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.PutDictionary(DictionariesModel.DictionaryDTO)">
+            <summary>
+            Puts the dictionary. Change or create new dictionary.
+            </summary>
+            <param name="dictionary">The dictionary.</param>
+            <returns>
+            Task&lt;HttpResponseMessage&gt;.
+            </returns>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.DeleteDictionary(System.String,System.String)">
+            <summary>
+            Delete Dictionary
+            </summary>
+            <param name="dictionaryName"></param>
+            <param name="version"></param>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.DeleteDictionaryItem(System.String,System.String,System.String)">
+            <summary>
+            Delete Item
+            </summary>
+            <param name="dictionaryName"></param>
+            <param name="version"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:DictionaryApi.Controllers.DictionaryController.GetAllDictionaries">
+            <summary>
+            Gets all dictionaries without items
+            </summary>
+            <returns>Task&lt;HttpResponseMessage&gt;.</returns>
+        </member>
+        <member name="T:DictionaryApi.Controllers.UiController">
+            <summary>
+            Class Ui
+            </summary>
+            <seealso cref="T:System.Web.Mvc.Controller" />
+        </member>
+        <member name="M:DictionaryApi.Controllers.UiController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DictionaryApi.Filters.ApiAuthenticationFilter">
+            <summary>
+            Class ApiAuthenticationFilter.
+            </summary>
+            <seealso cref="T:System.Web.Http.Filters.AuthorizationFilterAttribute" />
+        </member>
+        <member name="M:DictionaryApi.Filters.ApiAuthenticationFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DictionaryApi.Filters.ApiAuthenticationFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.Filters.ApiAuthenticationFilter.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Called when authorization has occurred.
+            </summary>
+            <param name="filterContext">The filter context.</param>
+        </member>
+        <member name="M:DictionaryApi.Filters.ApiAuthenticationFilter.IsAuthenticate(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Determines whether the specified filter context is authenticate.
+            </summary>
+            <param name="filterContext">The filter context.</param>
+            <returns>
+              <c>true</c> if the specified filter context is authenticate; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:DictionaryApi.Filters.ApiAuthenticationFilter.ChallengeAuthRequest(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Challenges the authentication request.
+            </summary>
+            <param name="filterContext">The filter context.</param>
+        </member>
+        <member name="T:DictionaryApi.Filters.AuthenticationFailureResult">
+            <summary>
+            Class AuthenticationFailureResult.
+            </summary>
+            <seealso cref="T:System.Web.Http.IHttpActionResult" />
+        </member>
+        <member name="M:DictionaryApi.Filters.AuthenticationFailureResult.#ctor(System.String,System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DictionaryApi.Filters.AuthenticationFailureResult"/> class.
+            </summary>
+            <param name="reasonPhrase">The reason phrase.</param>
+            <param name="request">The request.</param>
+        </member>
+        <member name="P:DictionaryApi.Filters.AuthenticationFailureResult.ReasonPhrase">
+            <summary>
+            Gets the reason phrase.
+            </summary>
+            <value>The reason phrase.</value>
+        </member>
+        <member name="P:DictionaryApi.Filters.AuthenticationFailureResult.Request">
+            <summary>
+            Gets the request.
+            </summary>
+            <value>The request.</value>
+        </member>
+        <member name="M:DictionaryApi.Filters.AuthenticationFailureResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            Creates an <see cref="T:System.Net.Http.HttpResponseMessage" /> asynchronously.
+            </summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage" />.</returns>
+        </member>
+        <member name="T:DictionaryApi.Filters.ExceptionFilter">
+            <summary>
+            ExceptionFilter
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.Filters.ExceptionFilter.OnExceptionAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            OnExceptionAsync
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DictionaryApi.WebApiApplication">
+            <summary>
+            WebApiApplication
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.WebApiApplication.Application_Start">
+            <summary>
+            Application_Start
+            </summary>
+        </member>
+        <member name="T:DictionaryApi.Interfaces.IAccountService">
+            <summary>
+            Interface IAccountService
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.Interfaces.IAccountService.Authenticate(System.String,System.String)">
+            <summary>
+            Authenticates the specified login.
+            </summary>
+            <param name="login">The login.</param>
+            <param name="hash">The hash.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:DictionaryApi.Services.AccountService">
+            <summary>
+            Class AccountService.
+            </summary>
+            <seealso cref="T:DictionaryApi.Interfaces.IAccountService" />
+        </member>
+        <member name="M:DictionaryApi.Services.AccountService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DictionaryApi.Services.AccountService"/> class.
+            </summary>       
+        </member>
+        <member name="M:DictionaryApi.Services.AccountService.Authenticate(System.String,System.String)">
+            <summary>
+            Authenticates the specified login.
+            </summary>
+            <param name="login">The login.</param>
+            <param name="password">The hash.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:DictionaryApi.Services.HashEncryptor">
+            <summary>
+            Class HashEncryptor.
+            </summary>
+        </member>
+        <member name="M:DictionaryApi.Services.HashEncryptor.EncryptWithMD5(System.String)">
+            <summary>
+            Encrypts the with m d5.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:DictionaryApi.Services.HashEncryptor.Encrypt(System.Security.Cryptography.HashAlgorithm,System.Text.Encoding,System.String)">
+            <summary>
+            Encrypts the specified algorithm.
+            </summary>
+            <param name="algorithm">The algorithm.</param>
+            <param name="encoding">The encoding.</param>
+            <param name="valueToEncrypt">The value to encrypt.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:DictionaryApi.Services.HashEncryptor.ComputeHash(System.String)">
+            <summary>
+            Computes the hash.
+            </summary>
+            <param name="stringToEncrypt">The string to encrypt.</param>
+            <returns>System.String.</returns>
+        </member>
+    </members>
+</doc>
